@@ -1,0 +1,30 @@
+*3.1 (Algebra: solve quadratic equations) The two roots of a quadratic equation
+ax2 + bx + c = 0 can be obtained using the following formula:
+r1 = (-b + 2b2 - 4ac) / 2a
+and r2 = (-b - 2b2 - 4ac) / 2a
+
+import java.util.Scanner;
+
+public class java {
+   public static void  main(String[] args){
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter a, b, c: ");
+	double a = input.nextDouble();
+	double b = input.nextDouble();
+	double c = input.nextDouble();
+        double d = b*b-4*a*c;
+        
+        if (d > 0) {
+        double r1 = (-b + Math.pow(d, 0.5))/(2*a);
+        double r2 = (-b - Math.pow(d, 0.5))/(2*a);
+        System.out.println("The roots are " + r1 + " and " + r2);
+	}
+        else if (d == 0) {
+        double r1 = (-b)/(2*a);
+        System.out.println("The root is " + r1);
+        }
+        else {
+        System.out.println("The equation has no real roots");
+	}
+  }
+}
