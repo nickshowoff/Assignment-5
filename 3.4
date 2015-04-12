@@ -1,0 +1,21 @@
+**3.4 (Game: learn addition) Write a program that generates two integers under 100
+and prompts the user to enter the sum of these two integers. The program then
+reports true if the answer is correct, false otherwise. The program is similar to
+Listing 3.1.
+
+import java.util.Scanner;
+
+public class java {
+   public static void  main(String[] args){
+        int number1 = (int)(System.currentTimeMillis() % 100);       
+        int number2 = (int)(System.currentTimeMillis() / 7 % 100);
+
+        Scanner input = new Scanner(System.in);
+	System.out.println("What is " + number1 + " + " + number2  + "? ");
+        
+        int answer = input.nextInt();
+        System.out.println("number1 + " + " + number2 + " + " = " + answer + " is " + (number1 + number2 == answer));
+        
+       
+  }
+}
