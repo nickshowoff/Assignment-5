@@ -1,0 +1,2798 @@
+3.7 (Financial application: monetary units) Modify Listing 2.10, ComputeChange.java,
+to display the nonzero denominations only, using singular words for single units such
+as 1 dollar and 1 penny, and plural words for more than one unit such as 2 dollars and
+3 pennies.
+
+
+
+
+import java.util.Scanner;
+
+public class java { 
+  public static void main(String[] args){ 
+  Scanner input = new Scanner(System.in);
+  System.out.print("Enter an amount:");  
+
+  double amount = input.nextDouble();
+  int remainingAmount = (int)(amount * 100);
+  int numberOfOneDollars = remainingAmount / 100;
+  remainingAmount = remainingAmount % 100;
+  
+  int numberOfQuarters = remainingAmount / 25;
+  remainingAmount = remainingAmount % 25;
+
+  int numberOfDimes = remainingAmount / 10;
+  remainingAmount = remainingAmount % 10;
+  int numberOfNickels = remainingAmount / 5;
+  remainingAmount = remainingAmount % 5;
+
+  int numberOfPennies = remainingAmount;
+
+  if (numberOfOneDollars == 1) {
+    
+    if (numberOfQuarters == 1) {
+      
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+     else if (numberOfQuarters == 0) {
+
+        if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+else if (numberOfQuarters > 1) {
+      
+             
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollar\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+}
+else if (numberOfOneDollars == 0) {
+    
+    if (numberOfQuarters == 1) {
+      
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+     else if (numberOfQuarters == 0) {
+
+        if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + 0);    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+else if (numberOfQuarters > 1) {
+      
+             
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+}
+else if (numberOfOneDollars > 0) {
+   if (numberOfQuarters == 1) {
+      
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+     else if (numberOfQuarters == 0) {
+
+        if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+else if (numberOfQuarters > 1) {
+      
+             
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfOneDollars + " dollars\n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+}
+else if (numberOfOneDollars == 0) {
+    
+    if (numberOfQuarters == 1) {
+      
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarter\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+     else if (numberOfQuarters == 0) {
+
+        if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + 0);    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+else if (numberOfQuarters > 1) {
+      
+             
+       if (numberOfDimes == 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dime\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+    else if (numberOfDimes == 0) {
+         if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n");    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+"\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+else if (numberOfDimes > 1) {
+       
+          if (numberOfNickels == 1) {
+         
+            if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n");    
+                  }
+            else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickel\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+             
+         else if (numberOfNickels == 0) {
+           if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                  }
+           else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" );    
+                  }
+           else if (numberOfPennies > 0) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+
+else if (numberOfNickels > 1) {
+          if (numberOfPennies == 1) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " penny" );    
+                   }
+            else if (numberOfPennies == 0) {
+                  System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n");    
+                  }
+            else if (numberOfPennies > 1 ) {
+                 System.out.println("Your amount " + amount + " consists of \n" +
+                  "\t" + numberOfQuarters + " quarters\n" +
+                  "\t" + numberOfDimes + " dimes\n" +
+                  "\t" + numberOfNickels + " nickels\n" +
+                  "\t" + numberOfPennies + " pennies" );    
+                   }
+  }
+
+
+
+
+                 }
+
+
+
+                }
+
+
+      }
+}
+
+
+
+
+
+
+
+} 
+}
