@@ -1,0 +1,79 @@
+*3.5 (Find future dates) Write a program that prompts the user to enter an integer for
+today’s day of the week (Sunday is 0, Monday is 1, . . ., and Saturday is 6). Also
+prompt the user to enter the number of days after today for a future day and display
+the future day of the week. Here is a sample run:
+Enter today's day: 1
+Enter the number of days elapsed since today: 3
+Today is Monday and the future day is Thursday
+
+Enter today's day: 0
+Enter the number of days elapsed since today: 31
+Today is Sunday and the future day is Wednesday
+
+
+
+
+import java.util.Scanner;
+
+public class java {
+   public static void  main(String[] args){
+                
+        Scanner input = new Scanner(System.in);
+	System.out.println("Enter today's day: ");
+        int a = input.nextInt();       
+        String today = "Null";        
+        if (a == 0) {
+        today = "Sunday";
+        }
+        else if (a == 1) {
+        today = "Monday";
+        }
+        else if (a == 2) {
+        today = "Tuesday";
+        }
+        else if (a == 3) {
+        today = "Wednesday";
+        }
+        else if (a == 4) {
+        today = "Thursday";
+        }       
+        else if (a == 5) {
+        today = "Friday";
+        }
+        else if (a == 6) {
+        today = "Saturday";
+        }
+        else {
+        System.out.println("Please reenter today's day");
+        }
+
+        System.out.println("Enter the number of days elapsed since today: ");
+        int b = input.nextInt(); 
+        int c = (a + b) % 7;
+        String afterToday = "Null";  
+        if (c == 0) {
+        afterToday = "Sunday";
+        }
+        else if (c == 1) {
+        afterToday = "Monday";
+        }
+        else if (c == 2) {
+        afterToday = "Tuesday";
+        }
+        else if (c == 3) {
+        afterToday = "Wednesday";
+        }
+        else if (c == 4) {
+        afterToday = "Thursday";
+        }       
+        else if (c == 5) {
+        afterToday = "Friday";
+        }
+        else {
+        afterToday = "Saturday";
+        }
+        
+        System.out.println("Today is " + today + " and the future day is " + afterToday);
+       
+  }
+}
